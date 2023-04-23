@@ -1,0 +1,84 @@
+@import "../vars";
+
+.route{
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  &__back{
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0;
+  }
+
+  &__points{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__map{
+    width: 100%;
+    height: 500px;
+    border-radius: $border-radius-main;
+    overflow: hidden;
+  }
+
+  &__info{
+    width: 100%;
+
+    &__type{
+      width: 325px;
+      height: auto;
+      margin-top: 20px;
+
+      &__info {
+        width: 100%;
+        height: auto;
+
+        & img{
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &__table{
+      margin-top: 20px;
+      width: 400px;
+
+      @media screen and (max-width: 1250px) {
+        width: 300px;
+      }
+
+      & table{
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        & tr{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      &__td{
+
+        &_sec{
+          text-align: right;
+        }
+      }
+    }
+  }
+}
