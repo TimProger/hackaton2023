@@ -1,0 +1,70 @@
+@import "../../vars";
+
+.text{
+  text-decoration: none;
+
+  &_small{
+    font-size: $font-size-small;
+  }
+
+  &_medium{
+    font-size: $font-size-medium;
+
+    @media screen and (max-width: 1250px) {
+      & {
+        font-size: $font-size-small;
+      }
+    }
+  }
+
+  &_bigger{
+    font-size: $font-size-bigger;
+
+    @media screen and (max-width: 1250px) {
+      & {
+        font-size: $font-size-big;
+      }
+    }
+  }
+
+  &_big{
+    font-size: $font-size-big;
+
+    @media screen and (max-width: 1250px) {
+      & {
+        font-size: $font-size-medium;
+      }
+    }
+  }
+
+  &_dark{
+    color: $color-text-third !important;
+  }
+
+  &_light{
+    color: $color-text-sec !important;
+  }
+
+  &_gray{
+    color: $color-text-main !important;
+  }
+
+  &_gradient{
+    background-image: $color-gradient-main;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &_link{
+    text-decoration: underline;
+  }
+
+  &_bold{
+    font-weight: 900;
+  }
+
+  &_noTd{
+    text-decoration: none !important;
+  }
+}

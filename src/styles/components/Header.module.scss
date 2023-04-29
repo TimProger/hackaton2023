@@ -1,0 +1,54 @@
+@import "../vars";
+
+.header{
+  width: 1088px;
+  height: 72px;
+  background-color: $color-block-main;
+  border-radius: $border-radius-main;
+  box-shadow: 0 0 4px 0 #00000030;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  padding: 0 80px;
+  margin-top: 20px;
+
+  @media screen and (max-width: 1250px) {
+    & {
+      width: 788px;
+    }
+  }
+
+  &__logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__links{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__link{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+      gap: 2px;
+
+      & div{
+        width: 100%;
+        border-radius: 2px;
+        margin: 0 10px;
+        height: 2px;
+      }
+    }
+
+
+    &__underline {
+      background: $color-gradient-main;
+    }
+  }
+}
