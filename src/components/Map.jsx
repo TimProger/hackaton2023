@@ -12,7 +12,7 @@ const MapComponent = ({coords, pointNames}) => {
       coords.map((_el, index) => {
         if(index === coords.length - 1) return
         ymaps
-          .route([coords[index], coords[index+1]])
+          .route([[coords[index][1], coords[index][0]], [coords[index+1][1], coords[index+1][0]]])
           .then(route => {
             setRoutes(prev => [...prev, route]);
           }, (e)=>{
@@ -26,7 +26,7 @@ const MapComponent = ({coords, pointNames}) => {
       <Map
         style={{width: '100%', height: '100%'}}
         defaultState={{
-          center: coords[0],
+          center: [coords[0][1], coords[0][0]],
           zoom: 6
         }}>
         {coords.length > 0 && coords.map((el, index)=>{
@@ -35,7 +35,7 @@ const MapComponent = ({coords, pointNames}) => {
               <>
                 {JSON.stringify(coords[0]) !== JSON.stringify(coords[index]) && <Placemark
                   key={index + 'h'}
-                  geometry={coords[index]}
+                  geometry={[el[1], el[0]]}
                   options={{
                     iconColor: index === 0 ? 'red' : 'blue'
                   }}
@@ -46,7 +46,7 @@ const MapComponent = ({coords, pointNames}) => {
           return <Placemark
             key={index}
             balloonOpen={true}
-            geometry={el}
+            geometry={[el[1], el[0]]}
             options={{
               iconColor: index === 0 ? 'red' : 'blue'
             }}

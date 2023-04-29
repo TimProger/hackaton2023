@@ -13,12 +13,7 @@ import data from '../test.json'
 
 const Routes: React.FC = () => {
 
-  const [routes, _setRoutes] = useState<IRoute[]>(data.map((el: IRoute) => {
-    el.geo = el.geo.map((el) => {
-      return [el[1], el[0]]
-    })
-    return el
-  }))
+  const [routes, _setRoutes] = useState<IRoute[]>(data)
 
   const [route, setRoute] = useState<IRoute | null>(null)
   const {index} = useParams();

@@ -9,12 +9,7 @@ import { IRoute } from 'src/types/routes.types';
 
 const App: React.FC = () => {
 
-  const [routes, _setRoutes] = useState<IRoute[]>(data.map((el: IRoute) => {
-    el.geo = el.geo.map((el) => {
-      return [el[1], el[0]]
-    })
-    return el
-  }).splice(0, 10))
+  const [routes, _setRoutes] = useState<IRoute[]>(data.splice(0, 10))
 
   return (
     <div className={s.main}>

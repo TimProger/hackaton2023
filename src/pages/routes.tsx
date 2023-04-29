@@ -5,17 +5,12 @@ import Card from "../components/Card";
 import Button from "../components/UI/Button";
 import {YMaps} from "@pbe/react-yandex-maps";
 import data from '../test.json'
-import { IRoute } from 'src/types/routes.types';
+import {IRoute} from "../types/routes.types";
 
 const Routes: React.FC = () => {
 
   const [counter, setCounter] = useState<number>(10)
-  const [routes, setRoutes] = useState([...data.map((el: IRoute) => {
-    el.geo = el.geo.map((el) => {
-      return [el[1], el[0]]
-    })
-    return el
-  })].splice(0, counter))
+  const [routes, setRoutes] = useState<IRoute[]>(data.splice(0, counter))
 
   useEffect(()=>{
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -23,12 +18,7 @@ const Routes: React.FC = () => {
 
   const seeMore = () => {
     setCounter(counter + 10)
-    setRoutes(prev => [...prev, ...data.map((el: IRoute) => {
-      el.geo = el.geo.map((el) => {
-        return [el[1], el[0]]
-      })
-      return el
-    }).splice(counter, 10)])
+    setRoutes(prev => [...prev, ...data])
   }
 
   return (
